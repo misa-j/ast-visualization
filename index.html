@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="/libs/Treant.css" type="text/css" />
+    <style>
+      body,
+      button {
+        font-size: 25px;
+      }
+
+      .program-text > button {
+        padding: 5px;
+      }
+
+      .node-name1 {
+        color: blue;
+      }
+      .node-desc,
+      .node-type {
+        display: none;
+      }
+      .program-stack {
+        border: 1px solid black;
+        width: 200px;
+      }
+
+      .program-stack,
+      .data-stack,
+      .console-output,
+      .program-variables {
+        border: 1px solid black;
+        min-width: 300px;
+        margin: 10px;
+        max-height: 950px;
+        overflow-y: scroll;
+        padding: 5px;
+      }
+
+      .program-stack > p,
+      .data-stack > p,
+      .console-output > p,
+      .program-variables > p,
+      .program-variables > p {
+        padding: 5px;
+      }
+
+      .program-variables {
+        padding: 0s;
+        border: 1px solid black;
+        min-width: 200px;
+        margin: 0;
+        margin-top: 10px;
+        height: 400px;
+      }
+
+      .program-text {
+        margin: 10px;
+      }
+
+      .container {
+        display: flex;
+      }
+      .selected-item {
+        border: 1px solid black;
+        border-left: none;
+        border-right: none;
+        padding: 3px;
+      }
+      .btns {
+        height: 60px;
+      }
+      textarea {
+        font-size: 25px;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="program-text">
+        <textarea name="program" id="" cols="30" rows="15"></textarea>
+        <br />
+        <button id="next">next</button>
+        <button id="run">run</button>
+        <button id="compile">compile</button>
+        <br />
+        <div class="program-variables">
+          <p>program memory</p>
+        </div>
+      </div>
+      <div class="program-stack">
+        <p>stack</p>
+      </div>
+      <div class="data-stack"></div>
+      <div class="console-output">
+        <p>program output</p>
+      </div>
+      <div id="tree-simple" style="width: 1000px; height: 1000px"></div>
+      <div class="btns"></div>
+    </div>
+
+    <!-- javascript -->
+    <script src="/libs/vendor/jquery.min.js"></script>
+    <script src="/libs/vendor/raphael.js"></script>
+    <script src="/libs/Treant.js"></script>
+    <script>
+      simple_chart_config = {
+        chart: {
+          container: "#tree-simple",
+          type: "step",
+        },
+      };
+    </script>
+    <script src="./utils.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
