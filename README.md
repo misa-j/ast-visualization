@@ -12,10 +12,9 @@ var a = 1;
 var b = 2;
 
 if(a < b) print "a is less than b";
-else print "a is >= than b";
+else print "a is >= b";
 
 print "end of program";
-
 ```
 
 ### calculate factorial of n
